@@ -65,3 +65,20 @@ export const updateOne = (model) => async (req, res) => {
   }
 };
 
+export const removeOne = (model) => async (req, res) => {
+  try {
+    const removed = await model.findOneAndRemove({
+      createdBy: req.user._id,
+      _id: req.params.id
+    });
+
+    if (!removed) {
+      return res.status(400).end();
+    }
+    return res.status(200).json({ data: removed });
+  } catch (error) {
+    console.error(error);
+    res.status(400).end();
+  }
+};
+
