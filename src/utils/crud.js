@@ -28,3 +28,14 @@ export const getMany = (model) => async (req, res) => {
   }
 };
 
+export const createOne = (model) => async (req, res) => {
+  const createdBy = req.user._id;
+  try {
+    const doc = await model.create({ ...req.body, createdBy });
+    res.status(201).json({ data: doc });
+  } catch (error) {
+    console.error(error);
+    res.status(400).end();
+  }
+};
+
