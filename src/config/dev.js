@@ -1,8 +1,6 @@
-const config = {
+export const config = {
   secrets: {
-    jwt: "videojournal"
+    jwt: 'learneverything'
   },
-  dbUrl: "mongodb://localhost:27017/video-journal"
+  dbUrl: 'mongodb://localhost:27017/video-journal'
 };
-
-module.exports = config;

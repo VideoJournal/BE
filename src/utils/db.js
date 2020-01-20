@@ -1,13 +1,7 @@
-require("dotenv").config();
-const mongoose = require("mongoose");
-const options = require("../config");
+import mongoose from 'mongoose';
+import options from '../config';
 
-const connect = (opts = {}) => {
-  return mongoose.connect(process.env.DB_URL, {
-    ...opts,
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-  });
-};
-
-module.exports = connect;
+export const connect = (url = options.dbUrl, opts = {}) => mongoose.connect(
+  url,
+  { ...opts, useUnifiedTopology: true }
+);

@@ -4,12 +4,15 @@
   "description": "To be the best way for students to get feedback on video journals.",
   "main": "index.js",
   "scripts": {
+    "build": "babel src --out-dir dist",
+    "dev": "nodemon --exec yarn restart",
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles  --silent",
     "test-routes": "yarn test -t router",
     "test-models": "yarn test -t model",
     "test-controllers": "yarn test -t controllers",
     "test-auth": "yarn test -t Authentication:",
-    "start": "node index.js"
+    "restart": "rimraf dist && yarn build && yarn start",
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -34,5 +37,32 @@
     "mongoose": "^5.8.7",
     "morgan": "^1.9.1",
     "validator": "^12.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "jest": "^24.9.0",
+    "mock-req-res": "^1.1.4",
+    "nodemon": "^2.0.2",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
+    "testEnvironment": "node",
+    "setupTestFrameworkScriptFile": "<rootDir>/test-db-setup.js",
+    "testPathIgnorePatterns": [
+      "dist/"
+    ],
+    "restoreMocks": true
   }
 }
