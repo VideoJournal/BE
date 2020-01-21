@@ -16,7 +16,7 @@ export const verifyToken = (token) => {
 };
 
 export const signup = async (req, res) => {
-  if (!req.body.email || !req.body.password) {
+  if (!req.body.name || !req.body.userName || !req.body.email || !req.body.password) {
     return res.status(400).json({ error: 'need email and password to signup' });
   }
 
@@ -28,5 +28,35 @@ export const signup = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'could not signup user' });
+  }
+};
+
+export const signin = async (req, res) => {
+  if (!req.body.email || !req.body.password) {
+    return res.status(400).json({ error: 'need email and password to register' });
+  }
+
+  const invalid = { error: 'invalid email and password combination' };
+
+  try {
+    const user = await User.findOne({ email: req.body.email })
+      .select('email password')
+      .exec();
+
+    if (!user) {
+      return res.status(401).json(invalid);
+    }
+
+    const match = await user.checkPassword(req.body.password);
+
+    if (!match) {
+      return res.status(401).json(invalid);
+    }
+
+    const token = newToken(user);
+    return res.status(201).json(token);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error });
   }
 };
