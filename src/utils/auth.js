@@ -78,7 +78,7 @@ export const protect = async (req, res, next) => {
   }
 
   const user = await User.findById(payload.id)
-    .select()
+    .select('-password')
     .lean()
     .exec();
 
