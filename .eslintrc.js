@@ -21,6 +21,7 @@ module.exports = {
     "no-unused-expressions": 0,
     "no-console": 0,
     "import/prefer-default-export": 0,
-    "global-require": 0
+    "global-require": 0,
+    "no-new": 0
   }
 };
