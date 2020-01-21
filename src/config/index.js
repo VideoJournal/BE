@@ -1,5 +1,7 @@
 import { merge } from 'lodash';
+import { config } from 'dotenv';
 
+config();
 const env = process.env.NODE_ENV || 'development';
 
 const baseConfig = {
@@ -9,8 +11,8 @@ const baseConfig = {
   port: 3000,
   secrets: {
     jwt: process.env.JWT_SECRET,
-    jwtExp: '100d'
-  }
+    jwtExp: '100d',
+  },
 };
 
 let envConfig = {};
@@ -23,6 +25,9 @@ switch (env) {
   case 'test':
   case 'testing':
     envConfig = require('./test').config;
+    break;
+  case 'production':
+    envConfig = require('./prod').config;
     break;
   default:
     envConfig = require('./dev').config;

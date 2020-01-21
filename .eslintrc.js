@@ -21,6 +21,8 @@ module.exports = {
     "no-unused-expressions": 0,
     "no-console": 0,
     "import/prefer-default-export": 0,
-    "global-require": 0
+    "global-require": 0,
+    "implicit-arrow-linebreak": 0,
+    "function-paren-newline": 0
   }
 };
