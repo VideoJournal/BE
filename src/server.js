@@ -6,6 +6,8 @@ import config from './config';
 import { connect } from './utils/db';
 import { signin, signup, protect } from './utils/auth';
 import userRouter from './resources/user/user.router';
+import videoRouter from './resources/video/video.router';
+import commentRouter from './resources/comment/comment.router';
 
 export const app = express();
 
@@ -19,6 +21,11 @@ app.use(morgan('dev'));
 
 app.post('/signup', signup);
 app.post('/signin', signin);
+
+app.use('/api', protect);
+app.use('/api/user', userRouter);
+app.use('/api/video', videoRouter);
+app.use('/api/comment', commentRouter);
 
 export const start = async () => {
   try {
