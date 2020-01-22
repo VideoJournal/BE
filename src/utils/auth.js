@@ -17,7 +17,7 @@ export const verifyToken = (token) => {
 
 export const signup = async (req, res) => {
   if (!req.body.name || !req.body.userName || !req.body.email || !req.body.password) {
-    return res.status(400).json({ error: 'need email and password to signup' });
+    return res.status(400).json({ error: 'missing required field' });
   }
 
 
@@ -54,10 +54,10 @@ export const signin = async (req, res) => {
     }
 
     const token = newToken(user);
-    return res.status(201).json(token);
+    return res.status(201).json({ token });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error });
+    res.status(500).json({ error: 'could not signin' });
   }
 };
 
