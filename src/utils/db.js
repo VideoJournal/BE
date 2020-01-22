@@ -3,5 +3,5 @@ import options from '../config';
 
 export const connect = (url = options.dbUrl, opts = {}) => mongoose.connect(
   url,
-  { ...opts, useUnifiedTopology: true }
+  { ...opts, useNewUrlParser: true }
 );
