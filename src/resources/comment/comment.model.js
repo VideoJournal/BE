@@ -12,10 +12,16 @@ const commentSchema = new mongoose.Schema(
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'user',
       required: true
+    },
+    video: {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: 'video',
+      required: true
     }
   },
   { timestamps: true }
 );
 
-commentSchema.index({ user: 1, name: 1 }, { unique: true });
-export const List = mongoose.model('comment', commentSchema);
+commentSchema.index({ video: 1, comment: 1 }, { unique: true });
+
+export const Comment = mongoose.model('comment', commentSchema);
