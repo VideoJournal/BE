@@ -7,3 +7,7 @@ export const connect = (url = options.dbUrl, opts = {}) =>
     useUnifiedTopology: true,
     useNewUrlParser: true,
   });
+export const connect = (url = options.dbUrl, opts = {}) => mongoose.connect(
+  url,
+  { ...opts, useNewUrlParser: true }
+);
