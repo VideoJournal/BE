@@ -5,7 +5,9 @@ import cors from 'cors';
 
 import config from './config';
 import { connect } from './utils/db';
-import { signin, signup, protect } from './utils/auth';
+import {
+  signin, signup, protect, socialAuthLogin
+} from './utils/auth';
 import userRouter from './resources/user/user.router';
 import videoRouter from './resources/video/video.router';
 import commentRouter from './resources/comment/comment.router';
@@ -31,7 +33,17 @@ app.get('/', (_, res) =>
 );
 app.post('/signup', signup);
 app.post('/signin', signin);
+// Google Sign In
 
+app.get('signin/google', passport.authenticate('google', {
+  scope: ['profile', 'email']
+}));
+
+app.get(
+  'signin/google/callback',
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  socialAuthLogin
+);
 app.use('/api', protect);
 app.use('/api/user', userRouter);
 app.use('/api/video', videoRouter);
