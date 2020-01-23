@@ -2,22 +2,28 @@ import jwt from 'jsonwebtoken';
 import config from '../config';
 import { User } from '../resources/user/user.model';
 
-export const newToken = (user) => jwt.sign({ id: user.id }, config.secrets.jwt, {
-  expiresIn: config.secrets.jwtExp
-});
-
-export const verifyToken = (token) => new Promise((resolve, reject) => {
-  jwt.verify(token, config.secrets.jwt, (err, payload) => {
-    if (err) return reject(err);
-    resolve(payload);
+export const newToken = (user) =>
+  jwt.sign({ id: user.id }, config.secrets.jwt, {
+    expiresIn: config.secrets.jwtExp
   });
-});
+
+export const verifyToken = (token) =>
+  new Promise((resolve, reject) => {
+    jwt.verify(token, config.secrets.jwt, (err, payload) => {
+      if (err) return reject(err);
+      resolve(payload);
+    });
+  });
 
 export const signup = async (req, res) => {
-  if (!req.body.name || !req.body.userName || !req.body.email || !req.body.password) {
+  if (
+    !req.body.name
+    || !req.body.userName
+    || !req.body.email
+    || !req.body.password
+  ) {
     return res.status(400).json({ error: 'missing required field' });
   }
-
 
   try {
     const user = await User.create(req.body);
@@ -32,7 +38,9 @@ export const signup = async (req, res) => {
 
 export const signin = async (req, res) => {
   if (!req.body.email || !req.body.password) {
-    return res.status(400).json({ error: 'need email and password to register' });
+    return res
+      .status(400)
+      .json({ error: 'need email and password to register' });
   }
 
   const invalid = { error: 'invalid email and password combination' };
@@ -57,6 +65,20 @@ export const signin = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'could not signin' });
+  }
+};
+
+export const socialAuthLogin = async (req, res) => {
+  const { user } = req;
+
+  try {
+    const token = newToken(user.dataValues);
+    return res.status(201).json({
+      message: `${user.dataValues.email} successfully logged in.`,
+      token
+    });
+  } catch (error) {
+    res.status(500).json({ error });
   }
 };
 
