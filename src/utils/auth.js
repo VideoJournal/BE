@@ -22,6 +22,7 @@ export const signup = async (req, res) => {
   try {
     const user = await User.create(req.body);
     const token = newToken(user);
+    // console.log(token);
     return res.status(201).json({ token });
   } catch (error) {
     console.error(error);

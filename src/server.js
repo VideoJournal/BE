@@ -19,7 +19,7 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
-app.use('/', (_, res) =>
+app.get('/', (_, res) =>
   res
     .status(200)
     .json({ status: 200, message: 'Welcome, the video journal app awaits!' }),
