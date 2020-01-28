@@ -26,10 +26,6 @@ Starts the development server in watch mode at port 2000.
 
 Runs all the test suites and displays test coverage.
 
-### `npm run watch`
-
-Starts the test in watch mode. Great for development 😄.
-
 ## API Documentation
 
 The One Line a Day is hosted on Heroku and can be [here](https://one-line-daily.herokuapp.com/).
