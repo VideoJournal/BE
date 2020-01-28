@@ -30,10 +30,6 @@ Runs all the test suites and displays test coverage.
 
 Starts the test in watch mode. Great for development 😄.
 
-### `npm run prod`
-
-Uses the _npm-run-all_ library to run the rollback, migrate and seed scripts. Sweet little combo ✌️.
-
 ## API Documentation
 
 The One Line a Day is hosted on Heroku and can be [here](https://one-line-daily.herokuapp.com/).
