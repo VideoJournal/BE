@@ -10,6 +10,10 @@ Video journal allows users to upload, manage and share videos with friends. A us
 
 Installs project dependencies.
 
+### `npm  run build`
+
+Creates a build of the project and outputs to the `dist` folder.
+
 ### `npm start`
 
 Starts the server at port 3000.
