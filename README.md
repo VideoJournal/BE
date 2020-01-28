@@ -320,6 +320,26 @@ The following endpoints are available for use.
 }
 ```
 
+#### Get comment by id [GET]
+
+**URL**: _https://videojournal.herokuapp.com/api/comment/5e2ff9d26e88700017918e1a_
+
+**Returns**: Returns a comment object.
+
+```javascript
+{
+    "data": {
+        "_id": "5e2ff9d26e88700017918e1a",
+        "video": "5e2ff8456e88700017918e15",
+        "comment": "lol",
+        "createdBy": "5e2ff42a6e88700017918e14",
+        "createdAt": "2020-01-28T09:07:30.292Z",
+        "updatedAt": "2020-01-28T09:07:30.292Z",
+        "__v": 0
+    }
+}
+```
+
 #### Update an entry [PUT]
 
 **URL**: _https://one-line-daily.herokuapp.com/api/entries/6_
