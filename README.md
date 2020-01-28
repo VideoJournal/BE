@@ -229,6 +229,27 @@ The following endpoints are available for use.
 }
 ```
 
+#### Delete video [DELETE]
+
+**URL**: _https://videojournal.herokuapp.com/api/video/5e2ff8ec6e88700017918e17_
+
+**Returns**: A JSON object with the deleted video
+
+```javascript
+{
+    "data": {
+        "videos": [
+            "First url",
+            "second url"
+        ],
+        "_id": "5e2ff8ec6e88700017918e17",
+        "description": "a very fun video to watch",
+        "createdBy": "5e2ff42a6e88700017918e14",
+        "__v": 0
+    }
+}
+```
+
 #### Update an entry [PUT]
 
 **URL**: _https://one-line-daily.herokuapp.com/api/entries/6_
@@ -258,19 +279,6 @@ The following endpoints are available for use.
             "image": null
         }
     ]
-}
-```
-
-#### Delete entry [DELETE]
-
-**URL**: _https://one-line-daily.herokuapp.com/api/entries/6_
-
-**Returns**: A JSON object with a message
-
-```javascript
-{
-    "status": 200,
-    "data": "1 entry deleted."
 }
 ```
 
