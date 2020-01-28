@@ -61,26 +61,24 @@ The following endpoints are available for use.
 
 #### Registration [POST]
 
-**URL**: _https://one-line-daily.herokuapp.com/api/auth/register_
+**URL**: _https://videojournal.herokuapp.com/signup_
 
 **Payload**:
 
 ```javascript
 {
-    "firstname": "wale",
-    "lastname": "Doe",
-    "username": "janeDoe2",
-    "email": "janeDoe2@doe.com",
-    "password": "12345"
+	"name": "Oyekunle Oloyede",
+	"userName": "Chief Oye",
+	"email": "chief@oye.com",
+	"password": "thoushallnotpass"
 }
 ```
 
-**Returns**: A message that user has been added successfully.
+**Returns**: A token to use for subsequent requests.
 
 ```javascript
 {
-    "status": 201,
-    "message": "User created successfully"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMmNDJhNmU4ODcwMDAxNzkxOGUxNCIsImlhdCI6MTU4MDIwMTAiwiZXhwIjoxNTg4ODQxMDAyfQ.3nJf1OKt-GJ5qIwBNd4oNXdXSeUGE5256hwfoBlKRm4"
 }
 ```
 
