@@ -408,4 +408,4 @@ Make `POST` request to `/subscribe` when subscribing a client for push messages.
 
 ## Author
 
-💻 ☕️ **Oyekunle Oloyede** 😎 🤙
+💻 ☕️ **The Video Journal Team** 😎 🤙
