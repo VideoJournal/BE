@@ -40,20 +40,22 @@ The [full documentation](https://one-line-daily.herokuapp.com/api/docs/) is also
 
 The following endpoints are available for use.
 
-| Methods | Endpoint              | Description                              |
-| ------- | --------------------- | ---------------------------------------- |
-| GET     | /                     | Returns the server status with a message |
-| GET     | /api/auth/users       | gets all users                           |
-| GET     | /api/auth/users/:id   | gets a user by id                        |
-| POST    | /api/auth/register    | registers a new user                     |
-| POST    | /api/auth/login       | logs a user in                           |
-| GET     | /api/entries          | gets all entries                         |
-| GET     | /api/entries/:id      | gets an entry by id                      |
-| GET     | /api/entries/user/:id | returns the ticket created by a user     |
-| POST    | /api/entries          | creates an entry                         |
-| PUT     | /api/entries/:id      | updates an entry                         |
-| DELETE  | /api/entries/:id      | deletes an entry                         |
-| POST    | /subscribe            | subscribes a user to get push message    |
+| Methods | Endpoint         | Description                              |
+| ------- | ---------------- | ---------------------------------------- |
+| GET     | /                | Returns the server status with a message |
+| GET     | /api/users       | gets all users                           |
+| PUT     | /api/user        | updates a user                           |
+| POST    | /signup          | registers a new user                     |
+| POST    | /sign            | logs a user in                           |
+| GET     | /api/video       | gets all videos                          |
+| GET     | /api/video/:id   | gets a video by id                       |
+| DELETE  | /api/video:id    | deletes a video                          |
+| POST    | /api/video       | creates a video                          |
+| GET     | /api/comment     | gets all comments                        |
+| GET     | /api/comment/:id | get a single comment                     |
+| PUT     | /api/comment/:id | updates a comment                        |
+| DELETE  | /api/comment/:id | deletes a comment                        |
+| POST    | /api/comment     | creates a comment                        |
 
 #### User Schema
 
