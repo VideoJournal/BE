@@ -4,6 +4,16 @@ The Video Journal project backend.
 
 Video journal allows users to upload, manage and share videos with friends. A user can upload videos and others can comment on the videos.
 
+## Deploy
+
+This app is deployed on heroku and can be found [here](https://videojournal.herokuapp.com/)
+
+## Push Notifications
+
+This server is built to support push notifications 📱 💻.
+
+Make `POST` request to `/subscribe` when subscribing a client for push messages.
+
 ## NPM Scripts
 
 ### `npm i`
@@ -385,22 +395,6 @@ The following endpoints are available for use.
     }
 }
 ```
-
-## Testing
-
-The server uses the Jest testing framework to run tests.
-
-Check tests with the `npm test` command.
-
-Coverage is also integrated and the can be viewed with the `npm test` command.
-
-Run the test in watch mode with `npm run watch`.
-
-## Push Notifications
-
-This server is built to support push notifications 📱 💻.
-
-Make `POST` request to `/subscribe` when subscribing a client for push messages.
 
 ## Author
 
