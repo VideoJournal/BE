@@ -370,6 +370,26 @@ The following endpoints are available for use.
 }
 ```
 
+#### Delete comment [DELETE]
+
+**URL**: _https://videojournal.herokuapp.com/api/comment/5e2ffadd6e88700017918e1d_
+
+**Returns**: A JSON object with the deleted comment
+
+```javascript
+{
+    "data": {
+        "_id": "5e2ffadd6e88700017918e1d",
+        "video": "5e2ff8456e88700017918e15",
+        "comment": "dfdf please share more videos",
+        "createdBy": "5e2ff42a6e88700017918e14",
+        "createdAt": "2020-01-28T09:11:57.939Z",
+        "updatedAt": "2020-01-28T09:11:57.939Z",
+        "__v": 0
+    }
+}
+```
+
 ## Testing
 
 The server uses the Jest testing framework to run tests.
