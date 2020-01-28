@@ -84,29 +84,22 @@ The following endpoints are available for use.
 
 #### Login [POST]
 
-**URL**: _https://one-line-daily.herokuapp.com/api/auth/login_
+**URL**: _https://videojournal.herokuapp.com/signin_
 
 **Payload**:
 
 ```javascript
 {
-    "email": "janeDoe2@doe.com",
-    "password": "12345"
+	"email": "chief@oye.com",
+	"password": "thoushallnotpass"
 }
 ```
 
-**Returns**: An object with the token
+**Returns**: A token to use for subsequent requests.
 
 ```javascript
 {
-    "status": 200,
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNTY0NDIydfdferleHAiOjE1NjQ0MjYyODV9.QkVwzXvzZpDw2BXTVyzEid-yba5RoiYUQoqXloaMZ-8",
-    "user": {
-        "id": 8,
-        "firstname": "wale",
-        "lastname": "Doe",
-        "email": "me@me.com"
-    }
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMmNDJhNmU4ODcwMDAxNzkxOGUxNCIsImlhdCI6MTU4MDIwMTAiwiZXhwIjoxNTg4ODQxMDAyfQ.3nJf1OKt-GJ5qIwBNd4oNXdXSeUGE5256hwfoBlKRm4"
 }
 ```
 
