@@ -178,24 +178,23 @@ The following endpoints are available for use.
 }
 ```
 
-#### Get entry by id [GET]
+#### Get video by id [GET]
 
-**URL**: _https://one-line-daily.herokuapp.com/api/entries/17_
+**URL**: _https://videojournal.herokuapp.com/api/video/5e2ff8456e88700017918e15_
 
-**Returns**: Returns an entry object.
+**Returns**: Returns a video object.
 
 ```javascript
 {
-    "status": 200,
     "data": {
-        "id": 17,
-        "title": "file upload",
-        "text": "this uploads file to cloudinary",
-        "created_at": "2019-07-31T14:43:29.686Z",
-        "user_id": 2,
-        "image": {
-            "url": "http://res.cloudinary.com/dopxebhwn/image/upload/v1564584208/one_line_a_day/jspat0k0fjihpcqredrm.png"
-        }
+        "_id": "5e2ff8456e88700017918e15",
+        "videos": [
+            "First url",
+            "second url"
+        ],
+        "description": "a very fun video to watch",
+        "createdBy": "5e2ff42a6e88700017918e14",
+        "__v": 0
     }
 }
 ```
