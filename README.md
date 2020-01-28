@@ -46,7 +46,7 @@ The following endpoints are available for use.
 | GET     | /api/users       | gets all users                           |
 | PUT     | /api/user        | updates a user                           |
 | POST    | /signup          | registers a new user                     |
-| POST    | /sign            | logs a user in                           |
+| POST    | /signin          | logs a user in                           |
 | GET     | /api/video       | gets all videos                          |
 | GET     | /api/video/:id   | gets a video by id                       |
 | DELETE  | /api/video:id    | deletes a video                          |
