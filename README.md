@@ -125,21 +125,23 @@ The following endpoints are available for use.
 }
 ```
 
-#### Get user by id [GET]
+#### Update user [PUT]
 
-**URL**: _https://one-line-daily.herokuapp.com/api/auth/users/1_
+**URL**: _https://videojournal.herokuapp.com/api/user_
 
-**Returns**: the user object.
+**Payload**:
 
 ```javascript
 {
-    "status": 200,
-    "data": {
-        "id": 5,
-        "firstname": "Van",
-        "lastname": "Damme",
-        "email": "van@damme.com"
-    }
+	"userName": "Chief Oye"
+}
+```
+
+**Returns**: the responst object.
+
+```javascript
+{
+    "data": null
 }
 ```
 
