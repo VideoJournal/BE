@@ -250,6 +250,46 @@ The following endpoints are available for use.
 }
 ```
 
+#### Get comments [GET]
+
+**URL**: _https://videojournal.herokuapp.com/api/comment_
+
+**Returns**: Returns comment object.
+
+```javascript
+{
+    "data": [
+        {
+            "_id": "5e2ff9bd6e88700017918e19",
+            "video": "5e2ff8456e88700017918e15",
+            "comment": "This is a great video",
+            "createdBy": "5e2ff42a6e88700017918e14",
+            "createdAt": "2020-01-28T09:07:09.018Z",
+            "updatedAt": "2020-01-28T09:07:09.018Z",
+            "__v": 0
+        },
+        {
+            "_id": "5e2ff9d26e88700017918e1a",
+            "video": "5e2ff8456e88700017918e15",
+            "comment": "lol please share more videos.",
+            "createdBy": "5e2ff42a6e88700017918e14",
+            "createdAt": "2020-01-28T09:07:30.292Z",
+            "updatedAt": "2020-01-28T09:10:06.238Z",
+            "__v": 0
+        },
+        {
+            "_id": "5e2ff9dc6e88700017918e1b",
+            "video": "5e2ff8456e88700017918e15",
+            "comment": "please share more videos",
+            "createdBy": "5e2ff42a6e88700017918e14",
+            "createdAt": "2020-01-28T09:07:40.974Z",
+            "updatedAt": "2020-01-28T09:07:40.974Z",
+            "__v": 0
+        }
+    ]
+}
+```
+
 #### Update an entry [PUT]
 
 **URL**: _https://one-line-daily.herokuapp.com/api/entries/6_
