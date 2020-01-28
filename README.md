@@ -137,7 +137,7 @@ The following endpoints are available for use.
 }
 ```
 
-**Returns**: the responst object.
+**Returns**: the response object.
 
 ```javascript
 {
@@ -145,50 +145,34 @@ The following endpoints are available for use.
 }
 ```
 
-#### Get all entries [GET]
+#### Get all videos [GET]
 
-**URL**: _https://one-line-daily.herokuapp.com/api/entries_
+**URL**: _https://videojournal.herokuapp.com/api/video_
 
-**Returns**: Returns an array of entries.
+**Returns**: Returns an array of videos.
 
 ```javascript
 {
-    "status": 200,
     "data": [
         {
-            "id": 1,
-            "title": "first entry",
-            "text": "this is quite awesome right.",
-            "created_at": "2019-07-30T13:34:38.772Z",
-            "user_id": 1
+            "_id": "5e2ff8456e88700017918e15",
+            "videos": [
+                "First url",
+                "second url"
+            ],
+            "description": "a very fun video to watch",
+            "createdBy": "5e2ff42a6e88700017918e14",
+            "__v": 0
         },
         {
-            "id": 2,
-            "title": "second entry",
-            "text": "keep hacking and never look back.",
-            "created_at": "2019-07-30T13:34:38.772Z",
-            "user_id": 2
-        },
-        {
-            "id": 3,
-            "title": "third entry",
-            "text": "go, and may the codes be with you.",
-            "created_at": "2019-07-30T13:34:38.772Z",
-            "user_id": 3
-        },
-        {
-            "id": 4,
-            "title": "fourth entry",
-            "text": "fourth time lucky?",
-            "created_at": "2019-07-30T13:34:38.772Z",
-            "user_id": 4
-        },
-        {
-            "id": 5,
-            "title": "fifth entry",
-            "text": "the dark forces will never prevail while the server is up.",
-            "created_at": "2019-07-30T13:34:38.772Z",
-            "user_id": 5
+            "_id": "5e2ff9956e88700017918e18",
+            "videos": [
+                "First url",
+                "second url"
+            ],
+            "description": "a very fun video to watch",
+            "createdBy": "5e2ff42a6e88700017918e14",
+            "__v": 0
         }
     ]
 }
