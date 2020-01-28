@@ -43,7 +43,7 @@ The following endpoints are available for use.
 | Methods | Endpoint         | Description                              |
 | ------- | ---------------- | ---------------------------------------- |
 | GET     | /                | Returns the server status with a message |
-| GET     | /api/users       | gets all users                           |
+| GET     | /api/user        | gets a user                              |
 | PUT     | /api/user        | updates a user                           |
 | POST    | /signup          | registers a new user                     |
 | POST    | /signin          | logs a user in                           |
@@ -105,63 +105,21 @@ The following endpoints are available for use.
 
 #### Get all users [GET]
 
-**URL**: _https://one-line-daily.herokuapp.com/api/auth/users_
+**URL**: _https://videojournal.herokuapp.com/api/user_
 
-**Returns**: An array of user object.
+**Returns**: A user object.
 
 ```javascript
 {
-    "status": 200,
-    "data": [
-        {
-            "id": 1,
-            "firstname": "John",
-            "lastname": "Doe",
-            "email": "jh@john.com"
-        },
-        {
-            "id": 2,
-            "firstname": "Jane",
-            "lastname": "Doe",
-            "email": "jn@john.com"
-        },
-        {
-            "id": 3,
-            "firstname": "Will",
-            "lastname": "Smith",
-            "email": "fresh@prince.com"
-        },
-        {
-            "id": 4,
-            "firstname": "Vin",
-            "lastname": "Diesel",
-            "email": "vin@diesel.com"
-        },
-        {
-            "id": 5,
-            "firstname": "Van",
-            "lastname": "Damme",
-            "email": "van@damme.com"
-        },
-        {
-            "id": 6,
-            "firstname": "wale",
-            "lastname": "Doe",
-            "email": "wale@doe.com"
-        },
-        {
-            "id": 7,
-            "firstname": "wale",
-            "lastname": "Doe",
-            "email": "wale@doe.coms"
-        },
-        {
-            "id": 8,
-            "firstname": "wale",
-            "lastname": "Doe",
-            "email": "me@me.com"
-        }
-    ]
+    "data": {
+        "_id": "5e2ff42a6e88700017918e14",
+        "name": "Oyekunle Oloyede",
+        "userName": "Chief Oye",
+        "email": "chief@oye.com",
+        "createdAt": "2020-01-28T08:43:22.909Z",
+        "updatedAt": "2020-01-28T08:43:22.909Z",
+        "__v": 0
+    }
 }
 ```
 
