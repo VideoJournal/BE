@@ -8,11 +8,9 @@ Video journal allows users to upload, manage and share videos with friends. A us
 
 This app is deployed on heroku and can be found [here](https://videojournal.herokuapp.com/)
 
-## Push Notifications
+## Published API Docs
 
-This server is built to support push notifications 📱 💻.
-
-Make `POST` request to `/subscribe` when subscribing a client for push messages.
+The published API docs can be found [here]()
 
 ## NPM Scripts
 
