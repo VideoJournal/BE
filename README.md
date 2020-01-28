@@ -199,61 +199,33 @@ The following endpoints are available for use.
 }
 ```
 
-#### Get a user's entry [GET]
+#### Create a video [POST]
 
-**URL**: _https://one-line-daily.herokuapp.com/api/entries/user/1_
+**URL**: _https://videojournal.herokuapp.com/api/video_
 
-**Returns**: An array of user's entry
+**Payload**: The video object to be created.
 
 ```javascript
 {
-    "status": 200,
-    "data": [
-        {
-            "id": 4,
-            "title": "fourth entry",
-            "text": "fourth time lucky?",
-            "created_at": "2019-07-30T10:46:09.135Z"
-        },
-        {
-            "id": 10,
-            "title": "seventh entry",
-            "text": "lets go",
-            "created_at": "2019-07-30T11:35:13.775Z"
-        }
-    ]
+	"videos": ["First url", "second url"],
+	"description": "a very fun video to watch"
 }
 ```
 
-#### Create an entry [POST]
-
-**URL**: _https://one-line-daily.herokuapp.com/api/entries_
-
-**Payload**: The entry object to be created.
+**Returns**: The newly created video.
 
 ```javascript
 {
-    "title": "random entry",
-    "text": "go, and may the codes be with you.",
-    "user_id": 1
-}
-```
-
-**Returns**: The newly created entry.
-
-```javascript
-{
-    "status": 201,
-    "data": [
-        {
-            "id": 23,
-            "title": "random entry",
-            "text": "go, and may the codes be with you.",
-            "user_id": 1,
-            "created_at": "2019-07-31T14:45:03.165Z",
-            "image": null
-        }
-    ]
+    "data": {
+        "videos": [
+            "First url",
+            "second url"
+        ],
+        "_id": "5e2ff9956e88700017918e18",
+        "description": "a very fun video to watch",
+        "createdBy": "5e2ff42a6e88700017918e14",
+        "__v": 0
+    }
 }
 ```
 
