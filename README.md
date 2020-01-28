@@ -12,7 +12,7 @@ Installs project dependencies.
 
 ### `npm start`
 
-Starts the server at port 5000.
+Starts the server at port 3000.
 
 ### `npm run server`
 
