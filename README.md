@@ -8,10 +8,6 @@ Video journal allows users to upload, manage and share videos with friends. A us
 
 This app is deployed on heroku and can be found [here](https://videojournal.herokuapp.com/)
 
-## Published API Docs
-
-The published API docs can be found [here](https://documenter.getpostman.com/view/6495381/SWTAAyLH)
-
 ## NPM Scripts
 
 ### `npm i`
@@ -36,9 +32,7 @@ Runs all the test suites and displays test coverage.
 
 ## API Documentation
 
-The One Line a Day is hosted on Heroku and can be [here](https://one-line-daily.herokuapp.com/).
-
-The [full documentation](https://one-line-daily.herokuapp.com/api/docs/) is also available on heroku.
+The [full documentation](https://documenter.getpostman.com/view/6495381/SWTAAyLH) is also available.
 
 ### API Endpoints
 
