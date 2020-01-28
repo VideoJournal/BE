@@ -103,7 +103,9 @@ The following endpoints are available for use.
 }
 ```
 
-#### Get all users [GET]
+### Protected Endpoints
+
+#### Get user [GET]
 
 **URL**: _https://videojournal.herokuapp.com/api/user_
 
@@ -140,8 +142,6 @@ The following endpoints are available for use.
     }
 }
 ```
-
-### Protected Endpoints
 
 #### Get all entries [GET]
 
