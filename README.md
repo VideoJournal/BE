@@ -10,7 +10,7 @@ This app is deployed on heroku and can be found [here](https://videojournal.hero
 
 ## Published API Docs
 
-The published API docs can be found [here]()
+The published API docs can be found [here](https://documenter.getpostman.com/view/6495381/SWTAAyLH)
 
 ## NPM Scripts
 
