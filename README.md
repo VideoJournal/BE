@@ -14,9 +14,9 @@ Installs project dependencies.
 
 Starts the server at port 3000.
 
-### `npm run server`
+### `npm run dev`
 
-Starts the development server in watch mode at port 5000.
+Starts the development server in watch mode at port 2000.
 
 ### `npm test`
 
