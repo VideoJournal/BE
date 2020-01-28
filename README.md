@@ -290,6 +290,36 @@ The following endpoints are available for use.
 }
 ```
 
+#### Create a comment [POST]
+
+**URL**: _https://videojournal.herokuapp.com/api/comment_
+
+**Payload**: The comment object to be created.
+
+```javascript
+{
+	"video": "5e2ff8456e88700017918e15",
+	"comment": "dfdf please share more videos",
+	"createdBy": "5e2ff42a6e88700017918e14"
+}
+```
+
+**Returns**: The newly created comment.
+
+```javascript
+{
+    "data": {
+        "_id": "5e2ffadd6e88700017918e1d",
+        "video": "5e2ff8456e88700017918e15",
+        "comment": "dfdf please share more videos",
+        "createdBy": "5e2ff42a6e88700017918e14",
+        "createdAt": "2020-01-28T09:11:57.939Z",
+        "updatedAt": "2020-01-28T09:11:57.939Z",
+        "__v": 0
+    }
+}
+```
+
 #### Update an entry [PUT]
 
 **URL**: _https://one-line-daily.herokuapp.com/api/entries/6_
