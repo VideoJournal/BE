@@ -1,8 +1,20 @@
 import { User } from './user.model';
 import { Video } from '../video/video.model';
 
-export const me = (req, res) => {
-  res.status(200).json({ data: req.user });
+export const me = async (req, res) => {
+  const data = req.user;
+
+  try {
+    const videos = await Video.find({ createdBy: data._id })
+      .lean()
+      .exec();
+
+    data.videos = videos;
+
+    res.status(200).json({ data });
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const updateMe = async (req, res) => {
