@@ -112,13 +112,34 @@ The following endpoints are available for use.
 ```javascript
 {
     "data": {
-        "_id": "5e2ff42a6e88700017918e14",
+        "_id": "5e313c3274970a0d47269eae",
         "name": "Oyekunle Oloyede",
         "userName": "Chief Oye",
         "email": "chief@oye.com",
-        "createdAt": "2020-01-28T08:43:22.909Z",
-        "updatedAt": "2020-01-28T08:43:22.909Z",
-        "__v": 0
+        "createdAt": "2020-01-29T08:02:58.035Z",
+        "updatedAt": "2020-01-29T08:02:58.035Z",
+        "__v": 0,
+        "videos": [
+            {
+                "_id": "5e313d4874970a0d47269eaf",
+                "videos": [
+                    "First url",
+                    "second url"
+                ],
+                "description": "Watch Kobe Bryant bring magic.",
+                "createdBy": "5e313c3274970a0d47269eae",
+                "__v": 0
+            },
+            {
+                "_id": "5e313d6774970a0d47269eb0",
+                "videos": [
+                    "url"
+                ],
+                "description": "Lionel Messi is the GOAT",
+                "createdBy": "5e313c3274970a0d47269eae",
+                "__v": 0
+            }
+        ]
     }
 }
 ```
