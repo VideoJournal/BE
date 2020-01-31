@@ -40,10 +40,11 @@ const strategy = app => {
     return done(createdError, createdUser);
   };
 
+  app.use(passport.initialize());
   passport.use(new GoogleStrategy(strategyOptions, verifyCallback));
 
   app.get(
-    `${process.env.BASE_API_URL}/auth/google`,
+    `${process.env.SERVER_API_URL}/auth/google`,
     passport.authenticate('google', {
       scope: [
         'https://www.googleapis.com/auth/userinfo.profile',
@@ -53,7 +54,7 @@ const strategy = app => {
   );
 
   app.get(
-    `${process.env.BASE_API_URL}/auth/google/callback`,
+    `${process.env.SERVER_API_URL}/auth/google/callback`,
     passport.authenticate('google', { failureRedirect: '/login' }),
     (req, res) => {
       const token = newToken(req.user);
