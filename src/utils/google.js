@@ -1,6 +1,8 @@
 import passport from 'passport';
 import passportGoogle from 'passport-google-oauth';
 
+import { User } from '../resources/user/user.model';
+
 const GoogleStrategy = passportGoogle.OAuth2Strategy;
 
 const strategy = app => {
