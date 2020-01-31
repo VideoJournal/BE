@@ -76,7 +76,7 @@ const strategy = app => {
             // setTimeout(() => {
             //   window.location.href = '${process.env.CLIENT_REDIRECT_URL}/dash';
             // }, 2000)
-            window.location.href = '${process.env.CLIENT_REDIRECT_URL}/dash';
+            window.location.href = '/dash';
         </script>
         </html>
     `;
