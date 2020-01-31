@@ -43,6 +43,14 @@ const strategy = app => {
   app.use(passport.initialize());
   passport.use(new GoogleStrategy(strategyOptions, verifyCallback));
 
+  passport.serializeUser(function (user, done) {
+    done(null, user);
+  });
+
+  passport.deserializeUser(function (user, done) {
+    done(null, user);
+  });
+
   app.get(
     '/auth/google',
     passport.authenticate('google', {

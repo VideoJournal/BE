@@ -27,5 +27,6 @@ module.exports = {
     'no-new': 0,
     'arrow-parens': 0,
     'operator-linebreak': 0,
+    'prefer-arrow-callback': 0,
   },
 };
