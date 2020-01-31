@@ -2,7 +2,7 @@ import passport from 'passport';
 import passportGoogle from 'passport-google-oauth';
 import { to } from 'await-to-js';
 
-import { User } from '../resources/user/user.model';
+import { getUserByGoogleID } from '../resources/user/user.controllers';
 
 const GoogleStrategy = passportGoogle.OAuth2Strategy;
 
@@ -14,7 +14,8 @@ const strategy = app => {
   };
 
   const verifyCallback = async (accessToken, refreshToken, profile, done) => {
-    let [err, user] = await to(getUserByProviderId(profile.id));
+    const [err, user] = await to(getUserByGoogleID(profile.id));
+
     if (err || user) {
       return done(err, user);
     }
