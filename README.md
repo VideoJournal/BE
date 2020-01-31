@@ -38,22 +38,23 @@ The [full documentation](https://documenter.getpostman.com/view/6495381/SWTAAyLH
 
 The following endpoints are available for use.
 
-| Methods | Endpoint         | Description                              |
-| ------- | ---------------- | ---------------------------------------- |
-| GET     | /                | Returns the server status with a message |
-| GET     | /api/user        | gets a user                              |
-| PUT     | /api/user        | updates a user                           |
-| POST    | /signup          | registers a new user                     |
-| POST    | /signin          | logs a user in                           |
-| GET     | /api/video       | gets all videos                          |
-| GET     | /api/video/:id   | gets a video by id                       |
-| DELETE  | /api/video:id    | deletes a video                          |
-| POST    | /api/video       | creates a video                          |
-| GET     | /api/comment     | gets all comments                        |
-| GET     | /api/comment/:id | get a single comment                     |
-| PUT     | /api/comment/:id | updates a comment                        |
-| DELETE  | /api/comment/:id | deletes a comment                        |
-| POST    | /api/comment     | creates a comment                        |
+| Methods | Endpoint                | Description                              |
+| ------- | ----------------------- | ---------------------------------------- |
+| GET     | /                       | Returns the server status with a message |
+| GET     | /api/user               | gets a user                              |
+| PUT     | /api/user               | updates a user                           |
+| POST    | /signup                 | registers a new user                     |
+| POST    | /signin                 | logs a user in                           |
+| GET     | /api/video              | gets all videos                          |
+| GET     | /api/video/:id          | gets a video by id                       |
+| DELETE  | /api/video:id           | deletes a video                          |
+| POST    | /api/video              | creates a video                          |
+| GET     | /api/comment            | gets all comments                        |
+| GET     | /api/comment/:id        | get a single comment                     |
+| PUT     | /api/comment/:id        | updates a comment                        |
+| DELETE  | /api/comment/:id        | deletes a comment                        |
+| POST    | /api/comment            | creates a comment                        |
+| GET     | /api/comment/videos/:id | gets comments by video id                |
 
 ### Authentication Endpoints
 
