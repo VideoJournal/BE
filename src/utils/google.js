@@ -1,5 +1,6 @@
 import passport from 'passport';
 import passportGoogle from 'passport-google-oauth';
+import { to } from 'await-to-js';
 
 import { User } from '../resources/user/user.model';
 

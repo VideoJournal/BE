@@ -23,7 +23,6 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: false,
-      minlength: 8,
     },
     googleID: {
       type: String,

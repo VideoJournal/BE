@@ -30,3 +30,5 @@ export const updateMe = async (req, res) => {
     res.status(400).json({ error: 'could not update user' });
   }
 };
+
+export const getUserByGoogleID = id => User.findOne({ googleID: id });
