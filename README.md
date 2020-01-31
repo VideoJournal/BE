@@ -38,22 +38,23 @@ The [full documentation](https://documenter.getpostman.com/view/6495381/SWTAAyLH
 
 The following endpoints are available for use.
 
-| Methods | Endpoint         | Description                              |
-| ------- | ---------------- | ---------------------------------------- |
-| GET     | /                | Returns the server status with a message |
-| GET     | /api/user        | gets a user                              |
-| PUT     | /api/user        | updates a user                           |
-| POST    | /signup          | registers a new user                     |
-| POST    | /signin          | logs a user in                           |
-| GET     | /api/video       | gets all videos                          |
-| GET     | /api/video/:id   | gets a video by id                       |
-| DELETE  | /api/video:id    | deletes a video                          |
-| POST    | /api/video       | creates a video                          |
-| GET     | /api/comment     | gets all comments                        |
-| GET     | /api/comment/:id | get a single comment                     |
-| PUT     | /api/comment/:id | updates a comment                        |
-| DELETE  | /api/comment/:id | deletes a comment                        |
-| POST    | /api/comment     | creates a comment                        |
+| Methods | Endpoint                | Description                              |
+| ------- | ----------------------- | ---------------------------------------- |
+| GET     | /                       | Returns the server status with a message |
+| GET     | /api/user               | gets a user                              |
+| PUT     | /api/user               | updates a user                           |
+| POST    | /signup                 | registers a new user                     |
+| POST    | /signin                 | logs a user in                           |
+| GET     | /api/video              | gets all videos                          |
+| GET     | /api/video/:id          | gets a video by id                       |
+| DELETE  | /api/video:id           | deletes a video                          |
+| POST    | /api/video              | creates a video                          |
+| GET     | /api/comment            | gets all comments                        |
+| GET     | /api/comment/:id        | get a single comment                     |
+| PUT     | /api/comment/:id        | updates a comment                        |
+| DELETE  | /api/comment/:id        | deletes a comment                        |
+| POST    | /api/comment            | creates a comment                        |
+| GET     | /api/comment/videos/:id | gets comments by video id                |
 
 ### Authentication Endpoints
 
@@ -356,6 +357,37 @@ The following endpoints are available for use.
         "updatedAt": "2020-01-28T09:07:30.292Z",
         "__v": 0
     }
+}
+```
+
+#### Get comment by video id [GET]
+
+**URL**: _https://videojournal.herokuapp.com/api/comment/videos/5e2ff8456e88700017918e15_
+
+**Returns**: Returns an array of comment objects.
+
+```javascript
+{
+    "data": [
+        {
+            "_id": "5e33ddc6dbd823098539596b",
+            "video": "5e33dd31dbd8230985395968",
+            "comment": "dfdf please share more videos",
+            "createdBy": "5e313c3274970a0d47269eae",
+            "createdAt": "2020-01-31T07:56:54.082Z",
+            "updatedAt": "2020-01-31T07:56:54.082Z",
+            "__v": 0
+        },
+        {
+            "_id": "5e33e2c076602b13685e3bcf",
+            "video": "5e33dd31dbd8230985395968",
+            "comment": "dfdf please share more videoss",
+            "createdBy": "5e313c3274970a0d47269eae",
+            "createdAt": "2020-01-31T08:18:08.007Z",
+            "updatedAt": "2020-01-31T08:18:08.007Z",
+            "__v": 0
+        }
+    ]
 }
 ```
 
