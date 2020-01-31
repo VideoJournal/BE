@@ -1,8 +1,6 @@
 import { crudControllers } from '../../utils/crud';
 import { Comment } from './comment.model';
 
-const controllers = crudControllers(Comment);
-
 const getByVideoID = async (req, res) => {
   const { id } = req.params;
 
@@ -16,5 +14,8 @@ const getByVideoID = async (req, res) => {
     res.status(500).json({ error: `Could not get video's comments: ${error}` });
   }
 };
+
+const controllers = crudControllers(Comment);
+controllers.getByVideoID = getByVideoID;
 
 export default controllers;
