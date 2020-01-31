@@ -30,3 +30,10 @@ export const updateMe = async (req, res) => {
     res.status(400).json({ error: 'could not update user' });
   }
 };
+
+
+// SOME USER MODEL HELPER METHODS
+export const getUserByGoogleID = async id =>
+  User.findOne({ googleID: id }).exec();
+
+export const createUser = async user => User.create(user);
