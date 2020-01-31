@@ -31,6 +31,8 @@ export const updateMe = async (req, res) => {
   }
 };
 
+
+// SOME USER MODEL HELPER METHODS
 export const getUserByGoogleID = async id =>
   User.findOne({ googleID: id }).exec();
 
