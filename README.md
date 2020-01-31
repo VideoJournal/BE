@@ -360,6 +360,37 @@ The following endpoints are available for use.
 }
 ```
 
+#### Get comment by video id [GET]
+
+**URL**: _https://videojournal.herokuapp.com/api/comment/videos/5e2ff8456e88700017918e15_
+
+**Returns**: Returns an array of comment objects.
+
+```javascript
+{
+    "data": [
+        {
+            "_id": "5e33ddc6dbd823098539596b",
+            "video": "5e33dd31dbd8230985395968",
+            "comment": "dfdf please share more videos",
+            "createdBy": "5e313c3274970a0d47269eae",
+            "createdAt": "2020-01-31T07:56:54.082Z",
+            "updatedAt": "2020-01-31T07:56:54.082Z",
+            "__v": 0
+        },
+        {
+            "_id": "5e33e2c076602b13685e3bcf",
+            "video": "5e33dd31dbd8230985395968",
+            "comment": "dfdf please share more videoss",
+            "createdBy": "5e313c3274970a0d47269eae",
+            "createdAt": "2020-01-31T08:18:08.007Z",
+            "updatedAt": "2020-01-31T08:18:08.007Z",
+            "__v": 0
+        }
+    ]
+}
+```
+
 #### Update a comment [PUT]
 
 **URL**: _https://videojournal.herokuapp.com/api/comment/5e2ff9d26e88700017918e1a_
