@@ -28,12 +28,12 @@ app.get('/', (_, res) =>
 app.post('/signup', signup);
 app.post('/signin', signin);
 
+strategy(app);
+
 app.use('/api', protect);
 app.use('/api/user', userRouter);
 app.use('/api/video', videoRouter);
 app.use('/api/comment', commentRouter);
-
-strategy(app);
 
 export const start = async () => {
   try {
