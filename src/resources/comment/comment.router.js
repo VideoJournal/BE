@@ -14,4 +14,8 @@ router
   .put(controllers.updateOne)
   .delete(controllers.removeOne);
 
+router
+  .route('/videos/:id')
+  .get(controllers.getByVideoID);
+
 export default router;
