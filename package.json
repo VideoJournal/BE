@@ -36,6 +36,8 @@
     "lodash": "^4.17.15",
     "mongoose": "^5.8.7",
     "morgan": "^1.9.1",
+    "passport": "^0.4.1",
+    "passport-google-oauth": "^2.0.0",
     "validator": "^12.1.0"
   },
   "devDependencies": {
@@ -53,8 +55,6 @@
     "jest": "^24.9.0",
     "mock-req-res": "^1.1.4",
     "nodemon": "^2.0.2",
-    "passport": "^0.4.1",
-    "passport-google-oauth": "^2.0.0",
     "supertest": "^4.0.2"
   },
   "jest": {
