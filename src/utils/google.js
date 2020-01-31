@@ -65,7 +65,7 @@ const strategy = app => {
             // Save JWT to localStorage
             window.localStorage.setItem('user-token', '${token}');
             // Redirect browser to root of application
-            window.location.href = '${process.env.CLIENT_REDIRECT_URL}/dash';
+            window.location.href = '/dash';
         </script>
         </html>
     `;
