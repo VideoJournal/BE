@@ -2,7 +2,10 @@ import passport from 'passport';
 import passportGoogle from 'passport-google-oauth';
 import { to } from 'await-to-js';
 
-import { getUserByGoogleID } from '../resources/user/user.controllers';
+import {
+  getUserByGoogleID,
+  createUser,
+} from '../resources/user/user.controllers';
 
 const GoogleStrategy = passportGoogle.OAuth2Strategy;
 
@@ -25,13 +28,11 @@ const strategy = app => {
 
     const [createdError, createdUser] = await to(
       createUser({
-        provider: profile.provider,
-        providerId: profile.id,
-        firstName: profile.name.givenName,
-        lastName: profile.name.familyName,
-        displayName: profile.displayName,
+        name: `${profile.name.givenName} ${profile.name.familyName}`,
+        userName: profile.displayName,
         email: verifiedEmail.value,
         password: null,
+        googleID: profile.id,
       }),
     );
 
