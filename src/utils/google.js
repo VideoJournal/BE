@@ -62,7 +62,7 @@ const strategy = app => {
         <html>
         <script>
             // Save JWT to localStorage
-            window.localStorage.setItem('JWT', '${token}');
+            window.localStorage.setItem('user-token', '${token}');
             // Redirect browser to root of application
             window.location.href = '/';
         </script>
