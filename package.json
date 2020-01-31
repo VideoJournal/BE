@@ -53,6 +53,8 @@
     "jest": "^24.9.0",
     "mock-req-res": "^1.1.4",
     "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-google-oauth": "^2.0.0",
     "supertest": "^4.0.2"
   },
   "jest": {
