@@ -43,11 +43,11 @@ const strategy = app => {
   app.use(passport.initialize());
   passport.use(new GoogleStrategy(strategyOptions, verifyCallback));
 
-  passport.serializeUser(function (user, done) {
+  passport.serializeUser(function(user, done) {
     done(null, user);
   });
 
-  passport.deserializeUser(function (user, done) {
+  passport.deserializeUser(function(user, done) {
     done(null, user);
   });
 
@@ -67,21 +67,7 @@ const strategy = app => {
     (req, res) => {
       const token = newToken(req.user);
 
-      const htmlWithEmbeddedJWT = `
-        <html>
-        <script>
-            // Save JWT to localStorage
-            window.localStorage.setItem('user-token', '${token}');
-            // Redirect browser to root of application
-            // setTimeout(() => {
-            //   window.location.href = '${process.env.CLIENT_REDIRECT_URL}/dash';
-            // }, 2000)
-            window.location.href = '/dash';
-        </script>
-        </html>
-    `;
-
-      res.send(htmlWithEmbeddedJWT);
+      res.redirect(`${process.env.CLIENT_REDIRECT_URL}/dash?token=${token}`);
     },
   );
 };
