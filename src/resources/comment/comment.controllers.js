@@ -1,4 +1,6 @@
 import { crudControllers } from '../../utils/crud';
 import { Comment } from './comment.model';
 
-export default crudControllers(Comment);
+const controllers = crudControllers(Comment);
+
+export default controllers;
