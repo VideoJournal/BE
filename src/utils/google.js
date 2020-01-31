@@ -72,8 +72,6 @@ const strategy = app => {
       res.send(htmlWithEmbeddedJWT);
     },
   );
-
-  return app;
 };
 
 export { strategy };

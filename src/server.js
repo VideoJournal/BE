@@ -9,6 +9,7 @@ import { signin, signup, protect } from './utils/auth';
 import userRouter from './resources/user/user.router';
 import videoRouter from './resources/video/video.router';
 import commentRouter from './resources/comment/comment.router';
+import { strategy } from './utils/google';
 
 export const app = express();
 
@@ -31,6 +32,8 @@ app.use('/api', protect);
 app.use('/api/user', userRouter);
 app.use('/api/video', videoRouter);
 app.use('/api/comment', commentRouter);
+
+strategy(app);
 
 export const start = async () => {
   try {
