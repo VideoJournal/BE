@@ -6,6 +6,7 @@ import {
   getUserByGoogleID,
   createUser,
 } from '../resources/user/user.controllers';
+import { newToken } from './auth';
 
 const GoogleStrategy = passportGoogle.OAuth2Strategy;
 
@@ -55,12 +56,20 @@ const strategy = app => {
     `${process.env.BASE_API_URL}/auth/google/callback`,
     passport.authenticate('google', { failureRedirect: '/login' }),
     (req, res) => {
-      return res
-        .status(200)
-        .cookie('jwt', signToken(req.user), {
-          httpOnly: true,
-        })
-        .redirect('/');
+      const token = newToken(req.user);
+
+      const htmlWithEmbeddedJWT = `
+        <html>
+        <script>
+            // Save JWT to localStorage
+            window.localStorage.setItem('JWT', '${token}');
+            // Redirect browser to root of application
+            window.location.href = '/';
+        </script>
+        </html>
+    `;
+
+      res.send(htmlWithEmbeddedJWT);
     },
   );
 
