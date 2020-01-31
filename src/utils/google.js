@@ -16,6 +16,29 @@ const strategy = app => {
 
   passport.use(new GoogleStrategy(strategyOptions, verifyCallback));
 
+  app.get(
+    `${process.env.BASE_API_URL}/auth/google`,
+    passport.authenticate('google', {
+      scope: [
+        'https://www.googleapis.com/auth/userinfo.profile',
+        'https://www.googleapis.com/auth/userinfo.email',
+      ],
+    }),
+  );
+
+  app.get(
+    `${process.env.BASE_API_URL}/auth/google/callback`,
+    passport.authenticate('google', { failureRedirect: '/login' }),
+    (req, res) => {
+      return res
+        .status(200)
+        .cookie('jwt', signToken(req.user), {
+          httpOnly: true,
+        })
+        .redirect('/');
+    },
+  );
+
   return app;
 };
 
