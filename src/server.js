@@ -2,6 +2,7 @@ import express from 'express';
 import { json, urlencoded } from 'body-parser';
 import morgan from 'morgan';
 import cors from 'cors';
+
 import config from './config';
 import { connect } from './utils/db';
 import { signin, signup, protect } from './utils/auth';
