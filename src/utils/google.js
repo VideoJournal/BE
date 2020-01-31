@@ -11,7 +11,27 @@ const strategy = app => {
   };
 
   const verifyCallback = async (accessToken, refreshToken, profile, done) => {
-    // TODO
+    let [err, user] = await to(getUserByProviderId(profile.id));
+    if (err || user) {
+      return done(err, user);
+    }
+
+    const verifiedEmail =
+      profile.emails.find(email => email.verified) || profile.emails[0];
+
+    const [createdError, createdUser] = await to(
+      createUser({
+        provider: profile.provider,
+        providerId: profile.id,
+        firstName: profile.name.givenName,
+        lastName: profile.name.familyName,
+        displayName: profile.displayName,
+        email: verifiedEmail.value,
+        password: null,
+      }),
+    );
+
+    return done(createdError, createdUser);
   };
 
   passport.use(new GoogleStrategy(strategyOptions, verifyCallback));
