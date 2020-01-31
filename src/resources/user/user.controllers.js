@@ -31,4 +31,4 @@ export const updateMe = async (req, res) => {
   }
 };
 
-export const getUserByGoogleID = id => User.findOne({ googleID: id });
+export const getUserByGoogleID = async id => User.findOne({ googleID: id });
