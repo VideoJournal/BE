@@ -2,7 +2,7 @@ import { Router } from 'express';
 import controllers from './comment.controllers';
 
 const router = Router();
-console.log("********", controllers);
+
 router
   .route('/')
   .get(controllers.getMany)
