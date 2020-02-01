@@ -10,7 +10,11 @@ import { newToken } from './auth';
 
 const GoogleStrategy = passportGoogle.OAuth2Strategy;
 
-const strategy = app => {
+/**
+ * useGoogleOAuth upgrades the app to support Google authentication
+ * @param {object} app the express app
+ */
+export const useGoogleOAuth = app => {
   // strategyOptions is options for the google strategy
   const strategyOptions = {
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -86,5 +90,3 @@ const strategy = app => {
     },
   );
 };
-
-export { strategy };
