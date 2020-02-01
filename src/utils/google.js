@@ -76,7 +76,9 @@ const strategy = app => {
   // callback route called by google after authentication
   app.get(
     '/auth/google/callback',
-    passport.authenticate('google', { failureRedirect: '/login' }),
+    passport.authenticate('google', {
+      failureRedirect: `${process.env.CLIENT_REDIRECT_URL}/signup`,
+    }),
     (req, res) => {
       const token = newToken(req.user);
 
