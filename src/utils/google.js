@@ -62,6 +62,7 @@ const strategy = app => {
     done(null, user);
   });
 
+  // route to call google authentication
   app.get(
     '/auth/google',
     passport.authenticate('google', {
@@ -72,6 +73,7 @@ const strategy = app => {
     }),
   );
 
+  // callback route called by google after authentication
   app.get(
     '/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/login' }),
