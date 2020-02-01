@@ -23,15 +23,18 @@ const strategy = app => {
    * to perform action on the returned scope
    */
   const verifyCallback = async (accessToken, refreshToken, profile, done) => {
+    // get user if it exists
     const [err, user] = await to(getUserByGoogleID(profile.id));
 
     if (err || user) {
       return done(err, user);
     }
 
+    // gets a verified mail or the first mail otherwise
     const verifiedEmail =
       profile.emails.find(email => email.verified) || profile.emails[0];
 
+    // create user if it does not exist
     const [createdError, createdUser] = await to(
       createUser({
         name: `${profile.name.givenName} ${profile.name.familyName}`,
