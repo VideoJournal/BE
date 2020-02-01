@@ -9,7 +9,7 @@ import { signin, signup, protect } from './utils/auth';
 import userRouter from './resources/user/user.router';
 import videoRouter from './resources/video/video.router';
 import commentRouter from './resources/comment/comment.router';
-import { useGoogleOAuth } from './utils/google';
+import { useGoogleOAuth } from './utils/googleOAuth';
 
 export const app = express();
 
