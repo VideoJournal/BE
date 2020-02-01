@@ -11,6 +11,7 @@ import { newToken } from './auth';
 const GoogleStrategy = passportGoogle.OAuth2Strategy;
 
 const strategy = app => {
+  // options for the google strategy
   const strategyOptions = {
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
