@@ -48,14 +48,17 @@ const strategy = app => {
     return done(createdError, createdUser);
   };
 
+  // initialize passport and use the google strategy
   app.use(passport.initialize());
   passport.use(new GoogleStrategy(strategyOptions, verifyCallback));
 
-  passport.serializeUser(function(user, done) {
+  // the serializer function
+  passport.serializeUser(function (user, done) {
     done(null, user);
   });
 
-  passport.deserializeUser(function(user, done) {
+  // the deserializer function
+  passport.deserializeUser(function (user, done) {
     done(null, user);
   });
 
