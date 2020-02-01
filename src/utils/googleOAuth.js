@@ -10,23 +10,35 @@ import { newToken } from './auth';
 
 const GoogleStrategy = passportGoogle.OAuth2Strategy;
 
-const strategy = app => {
+/**
+ * useGoogleOAuth upgrades the app to support Google authentication
+ * @param {object} app the express app
+ */
+export const useGoogleOAuth = app => {
+  // strategyOptions is options for the google strategy
   const strategyOptions = {
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: `${process.env.SERVER_API_URL}/auth/google/callback`,
   };
 
+  /**
+   * verifyCallback is used by the google strategy
+   * to perform action on the returned scope
+   */
   const verifyCallback = async (accessToken, refreshToken, profile, done) => {
+    // get user if it exists
     const [err, user] = await to(getUserByGoogleID(profile.id));
 
     if (err || user) {
       return done(err, user);
     }
 
+    // gets a verified mail or the first mail otherwise
     const verifiedEmail =
       profile.emails.find(email => email.verified) || profile.emails[0];
 
+    // create user if it does not exist
     const [createdError, createdUser] = await to(
       createUser({
         name: `${profile.name.givenName} ${profile.name.familyName}`,
@@ -40,17 +52,21 @@ const strategy = app => {
     return done(createdError, createdUser);
   };
 
+  // initialize passport and use the google strategy
   app.use(passport.initialize());
   passport.use(new GoogleStrategy(strategyOptions, verifyCallback));
 
+  // the serializer function
   passport.serializeUser(function (user, done) {
     done(null, user);
   });
 
+  // the deserializer function
   passport.deserializeUser(function (user, done) {
     done(null, user);
   });
 
+  // route to call google authentication
   app.get(
     '/auth/google',
     passport.authenticate('google', {
@@ -61,9 +77,12 @@ const strategy = app => {
     }),
   );
 
+  // callback route called by google after authentication
   app.get(
     '/auth/google/callback',
-    passport.authenticate('google', { failureRedirect: '/login' }),
+    passport.authenticate('google', {
+      failureRedirect: `${process.env.CLIENT_REDIRECT_URL}/signup`,
+    }),
     (req, res) => {
       const token = newToken(req.user);
 
@@ -71,5 +90,3 @@ const strategy = app => {
     },
   );
 };
-
-export { strategy };

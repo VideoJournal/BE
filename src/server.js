@@ -9,7 +9,7 @@ import { signin, signup, protect } from './utils/auth';
 import userRouter from './resources/user/user.router';
 import videoRouter from './resources/video/video.router';
 import commentRouter from './resources/comment/comment.router';
-import { strategy } from './utils/google';
+import { useGoogleOAuth } from './utils/googleOAuth';
 
 export const app = express();
 
@@ -28,7 +28,8 @@ app.get('/', (_, res) =>
 app.post('/signup', signup);
 app.post('/signin', signin);
 
-strategy(app);
+// useGoogleOAuth will add google authentication support
+useGoogleOAuth(app);
 
 app.use('/api', protect);
 app.use('/api/user', userRouter);
