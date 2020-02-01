@@ -18,6 +18,10 @@ const strategy = app => {
     callbackURL: `${process.env.SERVER_API_URL}/auth/google/callback`,
   };
 
+  /**
+   * verifyCallback is used by the google strategy
+   * to perform action on the returned scope
+   */
   const verifyCallback = async (accessToken, refreshToken, profile, done) => {
     const [err, user] = await to(getUserByGoogleID(profile.id));
 
@@ -44,11 +48,11 @@ const strategy = app => {
   app.use(passport.initialize());
   passport.use(new GoogleStrategy(strategyOptions, verifyCallback));
 
-  passport.serializeUser(function (user, done) {
+  passport.serializeUser(function(user, done) {
     done(null, user);
   });
 
-  passport.deserializeUser(function (user, done) {
+  passport.deserializeUser(function(user, done) {
     done(null, user);
   });
 
